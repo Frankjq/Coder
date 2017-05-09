@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Text3 {
 
-	//输入数据之后进行排序
+	//脢盲脠毛脢媒戮脻脰庐潞贸陆酶脨脨脜脜脨貌
 	
 	
 	
@@ -18,8 +18,10 @@ public class Text3 {
 		}
 		list.sort(null);
 		
-		System.out.print(list);
-		
+		for (int i = 0; i< list.size();i++)
+			{
+			System.out.print(list.get(i)+"  ");
+			}
 		
 	}
 
