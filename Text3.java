@@ -2,10 +2,7 @@ package Hang_OJ;
 import java.util.*;
 
 public class Text3 {
-
-	//ÊäÈëÊý¾ÝÖ®ºó½øÐÐÅÅÐò
-	
-	
+//输入数据之后进行排序
 	
 	public static void main(String[] args) {
 		
@@ -16,7 +13,8 @@ public class Text3 {
 			list.add(input.nextInt());
 			count--;
 		}
-		list.sort(null);
+		Collections.sort(list);
+		//list.sort(null);
 		
 		for (int i = 0; i< list.size();i++)
 			{
@@ -24,5 +22,4 @@ public class Text3 {
 			}
 		
 	}
-
 }
