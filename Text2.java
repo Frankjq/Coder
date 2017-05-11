@@ -5,7 +5,7 @@ public class Text2 {
 
 //25*25=625
 //625*625
-//ËÑË÷nÒÔÄÚµÄ´ËÀàÊı¾İ
+//æœç´¢nä»¥å†…çš„æ­¤ç±»æ•°æ®
 	
 	
 	
@@ -28,12 +28,12 @@ public class Text2 {
 	}
 	
 	
-	public static boolean Isnumber(int num){
+	public static boolean Isnumber(int num){// The first method	
 		
 		int s =num*num;
 		String str = String.valueOf(num);
 		int length = str.length();
-		int wei = (int) (s % (Math.pow(10, length)));//Æ½·½º¯Êı
+		int wei = (int) (s % (Math.pow(10, length)));//å¹³æ–¹å‡½æ•°
 		
 		if ( num== wei){
 			return true;
@@ -43,7 +43,7 @@ public class Text2 {
 		}
 	}
 		
-	public static boolean Isnum(int num){
+	public static boolean Isnum(int num){// The second method
 		int p =num*num;
 		String str_p = String.valueOf(p);
 		String str_num = String.valueOf(num);
