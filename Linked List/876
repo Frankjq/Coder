@@ -1,0 +1,60 @@
+Problem:
+Given a non-empty, singly linked list with head node head, return a middle node of linked list.
+If there are two middle nodes, return the second middle node.
+
+still a list
+odd list >> middle one as header  5/2 >> 3   7/2 >> 4
+even list >> second middle one as header  6/2 >> 4 10/2 >> 6
+
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+ 
+ loop to count the length and get the target node
+ O(n) time and O(1) space
+ 
+ 
+class Solution {
+    public ListNode middleNode(ListNode head) {
+        ListNode point = head;
+        int count = 0;
+        while (point != null){
+            count ++;
+            point = point.next;
+        }
+        int mid = count/2 +1;
+        count = 0;
+        point = head;
+        while (point != null){
+            count ++;
+            if (count == mid){
+                break;
+            }
+            point = point.next;
+        }  
+        return point;
+    }
+}
+
+same time and space
+more direct to get target
+the fast point is twice time than slow point
+
+
+class Solution {
+    public ListNode middleNode(ListNode head) {
+        ListNode slow = head, fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+}
+
