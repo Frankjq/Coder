@@ -1,0 +1,11 @@
+Given a sorted linked list, delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list.
+
+delete
+
+copy nodes
+
+previous node >> current node >> same node >>  next node >> nn node
+previous node >> next node >> same node >>  next node >> nn node
+previous node >> next node  >> nn node
+
+
