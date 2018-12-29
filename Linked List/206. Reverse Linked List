@@ -1,5 +1,9 @@
 Reverse a singly linked list.
 
+create
+
+recreate a new list from tail
+
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -9,7 +13,7 @@ Reverse a singly linked list.
  * }
  */
  
- interative >>
+interative >>
  
 class Solution {
     public ListNode reverseList(ListNode head) {
