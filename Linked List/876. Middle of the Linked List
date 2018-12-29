@@ -1,6 +1,7 @@
-Problem:
 Given a non-empty, singly linked list with head node head, return a middle node of linked list.
 If there are two middle nodes, return the second middle node.
+
+search
 
 still a list
 odd list >> middle one as header  5/2 >> 3   7/2 >> 4
@@ -16,8 +17,8 @@ even list >> second middle one as header  6/2 >> 4 10/2 >> 6
  * }
  */
  
- loop to count the length and get the target node
- O(n) time and O(1) space
+loop to count the length and get the target node
+O(n) time and O(1) space
  
  
 class Solution {
