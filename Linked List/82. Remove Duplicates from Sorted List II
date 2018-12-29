@@ -12,8 +12,9 @@ can't solve head and tail nodes
 
 focus on three nodes 
 
-A A A 
-A A B
+A A A >> follow two condition 
+A A B >> next
+A A / >> end 
 
 A B C 
 A B B B
@@ -61,4 +62,40 @@ class Solution {
         return head;
     }
 }
+
+
+class Solution {
+    public ListNode deleteDuplicates(ListNode head) {
+        if (head == null) return null;
+   
+        ListNode cur = head,next = head.next,prev = null;
+        while (next != null) {
+            if (cur.val != next.val) {
+                prev = cur;
+                cur = cur.next;
+                next = next.next;
+            } else {
+                while (next != null && next.val == cur.val)
+                    next = next.next;
+                
+                if (next != null) {
+                   cur.val = next.val;
+                   cur.next = next.next;
+                   next = next.next;
+                } else {
+                   if (prev == null)
+                       head = null;
+                   else
+                       prev.next = null;
+                }
+            }  
+        }
+        
+        return head;
+    }
+}
+
+
+
+
 
