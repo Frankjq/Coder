@@ -8,4 +8,57 @@ previous node >> current node >> same node >>  next node >> nn node
 previous node >> next node >> same node >>  next node >> nn node
 previous node >> next node  >> nn node
 
+can't solve head and tail nodes
+
+focus on three nodes 
+
+A A A 
+A A B
+
+A B C 
+A B B B
+A B B C
+
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode deleteDuplicates(ListNode head) {
+        if (head == null || head.next == null ) return head;
+        
+        while(head.val == head.next.val){
+            if (head.next.next  == null) return null;
+            if (head.next.next.val == head.next.val){
+                head.next = head.next.next;
+            }else{
+                head = head.next.next;
+                 if(head.next == null) return head;
+            }
+        }
+        
+        ListNode point = head;  
+        while (point.next.next != null){                
+            while(point.next.val == point.next.next.val ){
+                if (point.next.next.next == null) {
+                    point.next = null;
+                   return head;
+                }
+                if(point.next.next.val == point.next.next.next.val ){
+                   point.next.next = point.next.next.next;
+               }else{
+                   point.next = point.next.next.next;
+                    if(point.next.next == null) return head;
+               }
+            }          
+            point = point.next;               
+        }      
+        return head;
+    }
+}
 
