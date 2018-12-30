@@ -1,0 +1,26 @@
+Given a singly linked list, determine if it is a palindrome.
+
+list 
+
+two points >> fast and slow
+
+1   2   3   2   1 
+s   f
+
+1   2   3   2   1
+    s       f
+    
+1   2   3   2   1   null
+        s            f
+ 
+ 
+1   2   3   3   2   1
+s   f 
+1   2   3   3   2   1
+    s       f
+1   2   3   3   2   1    null 
+        s           f   
+    
+ 
+O(n) time and O(1) space
+
