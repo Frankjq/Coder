@@ -1,0 +1,44 @@
+Remove all elements from a linked list of integers that have value val.
+
+delete
+
+while loop check all val of nodes 
+
+pre, current, next 
+
+copy except tail
+
+check next node val
+
+O(n) time
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode removeElements(ListNode head, int val) {
+        if(head == null) return head;
+        while(head.val == val){
+            if(head.next == null ) return null;
+            head = head.next;
+        }
+        ListNode point = head;
+        
+        while(point.next != null){
+            if (point.next.val == val) {
+                point.next = point.next.next;
+            }else{
+                point = point.next;
+            }
+            
+            
+        }
+        return head;
+        
+    }
+}
