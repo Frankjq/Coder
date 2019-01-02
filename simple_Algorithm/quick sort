@@ -1,4 +1,29 @@
 Sort
   Quick sort
  --> divide and conquer
+ --> recurisive 
  
+ static void  quickSort (int [] array , int low, int high){
+		 if (low < high){ 
+				int comp = low;			
+				for(int i = low; i < high ; i++ ){
+					
+					if(array[i] >  array[comp] ){
+						int temp = array[comp];
+						array[comp] = array[comp + 1];
+						array[comp + 1] = temp;
+						
+						temp = array[i];
+						array[i] = array[comp];
+						array[comp] = temp;
+						
+						comp ++;
+					}	
+				
+        }				
+				
+        quickSort(array, low , comp-1);
+				quickSort(array, comp+1 , high);
+		 
+     }
+	}
