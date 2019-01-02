@@ -21,9 +21,10 @@ Sort
 					}	
 				
         }				
-				
+
         quickSort(array, low , comp-1);
 				quickSort(array, comp+1 , high);
 		 
      }
 	}
+
