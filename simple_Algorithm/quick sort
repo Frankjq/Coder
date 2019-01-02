@@ -3,6 +3,10 @@ Sort
  --> divide and conquer
  --> recurision 
  
+ 
+ O(nlgn) time 
+ 
+ 
  static void  quickSort (int [] array , int low, int high){
 		 if (low < high){ 
 				int comp = low;			
