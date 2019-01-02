@@ -1,7 +1,7 @@
 Sort
   Quick sort
  --> divide and conquer
- --> recurisive 
+ --> recurision 
  
  static void  quickSort (int [] array , int low, int high){
 		 if (low < high){ 
