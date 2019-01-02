@@ -18,6 +18,7 @@ O(n^2) time
 
 a little improvement to speed up by checking if it hea been done
 
+
 	public static void bubbleSortB(int [] array){		
 		for(int j = 0; j< array.length ; j++){	
 			boolean done = true;
