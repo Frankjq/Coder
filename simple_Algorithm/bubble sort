@@ -4,7 +4,7 @@ Sort
 
 O(n^2) time
 
-  public static int [] bubbleSort(int [] array){		
+  public static void bubbleSort(int [] array){		
     for(int j = 0; j< array.length ; j++){	
       for(int i = 0 ; i< array.length-1 ; i++){
         if(array[i] > array[i+1]){
@@ -13,13 +13,12 @@ O(n^2) time
           array[i+1] = temp;
         }
       }	
-    }		
-    return array;	
+    }	
   }
 
 a little improvement to speed up by checking if it hea been done
 
-	public static int [] bubbleSortB(int [] array){		
+	public static void bubbleSortB(int [] array){		
 		for(int j = 0; j< array.length ; j++){	
 			boolean done = true;
 			for(int i = 0 ; i< array.length-1 ; i++){
@@ -32,5 +31,4 @@ a little improvement to speed up by checking if it hea been done
 			}
 			if(done == true) break;
 		}
-		return array;	
 	} 
