@@ -1,0 +1,20 @@
+
+  O(lgn) time
+
+	 static boolean binarySeach (int [] array, int low, int high , int target){
+		 
+		 if (high < low ) return false;
+		 
+		 int mid = ( low + high )/2;
+		 
+		 if (target == array[mid]){
+			 return true;
+		 }
+
+		 if (target < array[mid]){
+			 return binarySeach(array, low, mid-1, target);
+		 }else{
+			 return binarySeach(array, mid + 1, high , target);
+		 }
+		  
+	 }
