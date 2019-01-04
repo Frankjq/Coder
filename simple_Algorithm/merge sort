@@ -2,7 +2,9 @@ Sort
   merge sort
 --> divide and conquer
 
-static void mergeSort (int [] array , int low , int high){
+	O(nlgn) time
+
+	static void mergeSort (int [] array , int low , int high){
 		 
 		 if (low < high){
 			 // divide
