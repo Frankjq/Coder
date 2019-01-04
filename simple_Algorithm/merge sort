@@ -2,3 +2,64 @@ Sort
   merge sort
 --> divide and conquer
 
+static void mergeSort (int [] array , int low , int high){
+		 
+		 if (low < high){
+			 // divide
+			 int mid = (low + high )/2 ;
+			 
+			 
+			 mergeSort (array, low, mid );
+			 mergeSort (array, mid + 1 , high );
+			 
+			 // merge
+			 merge(array,low, mid, high);
+			  
+		 }
+	 }
+	 
+	 
+	 static void merge(int []array, int low, int mid , int high){
+		 
+		 int numl = mid - low +1 ;
+		 int numr = high - mid ;
+		 
+		 int [] arrL = new int [numl];
+		 int [] arrR = new int [numr];
+		 
+     // copy
+		 for(int i = 0; i< numl; i++){
+			 arrL [i] = array[i + low];
+		 }
+		 for(int j = 0; j< numr; j++){
+			 arrR [j] = array[j + mid + 1];
+		 }
+		 
+		 int i = 0 , j = 0 , k = low ;
+		 
+     //compare and cpoy back
+		 while( i < numl && j < numr ){
+			 
+			 if(arrL[i] > arrR[j]){
+				 array[k] = arrR[j];
+				 j++; 	 
+			 }else{
+				 array[k] = arrL[i];
+				 i++;	 	 
+			 }
+			 k++;
+		 }
+		 
+     //remaining
+		 while (i < numl){	            
+			 array[k] = arrL[i]; 
+	         i++;   
+			 k++; 
+		 } 
+	  
+		 while (j < numr){	            
+			 array[k] = arrR[j]; 
+	         j++;   
+			 k++; 
+		 }  
+	 }
