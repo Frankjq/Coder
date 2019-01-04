@@ -1,1 +1,19 @@
+Sort
+  --> insertion sort
+  
+  a loop to insert the ith element into the 0th to i-1th of array
+  swap element
+  
+  O(n^2) time
 
+	static void insertionSort (int [] array){
+		for (int i = 0; i < array.length ; i++ ){
+			for(int j = 0; j< i ; j++){
+				if(array[j] > array[i]){
+					int temp = array[i];			
+					array[i] = array[j];
+					array[j] = temp;
+				}
+			}
+		}
+	}
