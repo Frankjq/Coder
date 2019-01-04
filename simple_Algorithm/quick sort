@@ -7,28 +7,33 @@ Sort
  O(nlgn) time 
  
  
- static void  quickSort (int [] array , int low, int high){
-		 if (low < high){ 
-				int comp = low;			
-				for(int i = low; i < high ; i++ ){
-					
-					if(array[i] >  array[comp] ){
-						int temp = array[comp];
-						array[comp] = array[comp + 1];
-						array[comp + 1] = temp;
+
+	static void  quickSort (int [] array , int low, int high){
+		 if (low < high){
+				int comp = low;
+
+				for(int i = low; i <= high ; i++ ){
+						 // less than comp th element
+					if(array[i] <  array[comp] ){
 						
-						temp = array[i];
+						// swap comp+1 and comp except it is i th
+						if(comp+1 != i){
+							int temp = array[comp];
+							array[comp] = array[comp + 1];
+							array[comp + 1] = temp;								
+						}
+						
+						// swap i th and comp th element
+						int temp = array[i];
 						array[i] = array[comp];
 						array[comp] = temp;
-						
+
 						comp ++;
 					}	
+				}
 				
-        }				
-
-        quickSort(array, low , comp-1);
+				quickSort(array, low , comp-1);
 				quickSort(array, comp+1 , high);
-		 
-     }
-	}
 
+		 }
+	}
