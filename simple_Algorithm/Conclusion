@@ -14,6 +14,15 @@ Sort
     
     Quick sort            --> O(nlgn)
     
+    
+  Bubble sort and insertion sort 两次循环比较
   
+  Merge sort 分治 比较
   
+  Counting sort 排列计数
   
+  Binary search sort -- 数据结构 Tree
+
+  Selection sort  两次循环 比较
+  
+  Quick sort 分治 比较
