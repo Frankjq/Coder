@@ -1,0 +1,94 @@
+We are given head, the head node of a linked list containing unique integer values.
+
+We are also given the list G, a subset of the values in the linked list.
+
+Return the number of connected components in G, where two values are connected if they appear consecutively in the linked list.
+
+
+head -- 0 > 1 > 2 > 3 > 4
+G    -- 1 , 3 , 4
+output = 2
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+ 
+
+simple method 
+  sort array 
+  loop listNode and search it in the array
+  
+  k = G.length
+  n = nodes 
+  O(nlgk) time
+  O(1)  space
+ 
+class Solution {
+    public int numComponents(ListNode head, int[] G) {
+        int count =0;
+        sortArray(G,0,G.length-1);
+        ListNode p = head;
+        while(p != null){
+            if(binarySearch(G,0,G.length-1,p.val)){
+                count ++;
+                
+                while(p.next!=null && binarySearch(G,0,G.length-1,p.val)){
+                p= p.next;
+                }
+            }
+            p = p.next;
+        }       
+        return count;       
+    }
+    
+    
+    public static void  sortArray(int [] array, int low, int high){
+         if (low < high){
+            int comp = low;
+            for(int i = low; i <= high ; i++ ){
+                     // less than comp th element
+                if(array[i] <  array[comp] ){
+                    // swap comp+1 and comp except it is i th
+                    if(comp+1 != i){
+                        int temp = array[comp];
+                        array[comp] = array[comp + 1];
+                        array[comp + 1] = temp;								
+                    }
+                    // swap i th and comp th element
+                    int temp = array[i];
+                    array[i] = array[comp];
+                    array[comp] = temp;
+
+                    comp ++;
+                }	
+            }
+            sortArray(array, low , comp-1);
+            sortArray(array, comp+1 , high);
+		 }
+    }
+    
+    public boolean binarySearch(int [] array, int low, int high, int target){
+        int mid = (low + high )/2;
+        if(array[mid] == target){
+            return true;
+        }
+        if(low < high){
+            if(array[mid] < target){
+                return binarySearch(array, mid+1, high, target);
+            }
+            if(array[mid] > target){
+                return binarySearch(array, low, mid-1, target);
+            }
+        }
+        return false;
+    } 
+}
+
+
+better method
+  
