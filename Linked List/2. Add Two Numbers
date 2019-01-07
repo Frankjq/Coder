@@ -1,0 +1,115 @@
+You are given two non-empty linked lists representing two non-negative integers. 
+The digits are stored in reverse order and each of their nodes contain a single digit. 
+Add the two numbers and return it as a linked list.
+
+You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+
+Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
+Output: 7 -> 0 -> 8
+Explanation: 342 + 465 = 807.
+
+
+O(max(m,n)) time 
+
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+ 
+class Solution {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {   
+        ListNode sum = new ListNode(l1.val + l2.val);
+        ListNode p = sum;    
+        int g , d;
+        
+        while(l1.next !=null && l2.next !=null ){
+            l1 = l1.next;
+            l2 = l2.next;     
+            
+            g = p.val % 10;
+            d = p.val / 10;
+  
+            p.val = g;
+            
+            
+            p.next = new ListNode(l1.val + l2.val + d);
+            p = p.next;    
+        }
+         
+        while (l1.next !=null){
+            l1 = l1.next;
+            
+            g = p.val % 10;
+            d = p.val / 10;
+            
+            p.val = g;
+            
+            p.next = new ListNode(l1.val + d);
+            p = p.next;
+        }
+            
+        while (l2.next !=null){
+            l2 = l2.next;
+            
+            g = p.val % 10;
+            d = p.val / 10;
+            
+            p.val = g;
+            
+            p.next = new ListNode(l2.val + d);
+            p = p.next;
+        }
+        
+        g = p.val % 10;
+        d = p.val / 10;
+            
+        if(d != 0){
+            p.val = g;
+            p.next = new ListNode(d);
+        }
+  
+        return sum;        
+    }
+}
+
+
+
+mix it up
+
+class Solution {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        
+        ListNode head = new ListNode(0);
+        ListNode cur = head, p = l1, q = l2;    
+        int sum, carry = 0;
+        while(p !=null || q !=null ){
+            if(p == null){
+                sum = q.val + carry; 
+            }else if(q == null){
+                sum = p.val + carry; 
+            } else{
+                sum = p.val + q.val + carry;
+            } 
+            
+            carry = sum /10;
+            cur.val = sum % 10;  
+            
+            if(p != null)  p = p.next;
+            if(q != null)  q = q.next; 
+            
+            if(carry == 0 && p ==null && q == null){
+                break;    
+            }else{
+                cur.next = new ListNode(carry);
+            
+            }
+            cur = cur.next;    
+        }
+        return head;   
+    }
+}
