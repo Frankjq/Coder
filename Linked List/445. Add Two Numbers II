@@ -10,6 +10,9 @@ Output: 7 -> 8 -> 0 -> 7
 
 from the tail to head
 
+O(m+n) time
+O(m+n) space
+
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -41,7 +44,7 @@ class Solution {
         ListNode head = new ListNode(sum%10);
         carry = sum/10;
         nump--;
-        numq--
+        numq--;
         
         while(nump > 0 || numq > 0){
             if(nump == 0){
