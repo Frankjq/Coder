@@ -1,0 +1,72 @@
+similar with no.2 
+You are given two non-empty linked lists representing two non-negative integers. 
+The most significant digit comes first and each of their nodes contain a single digit. 
+Add the two numbers and return it as a linked list.
+
+You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+
+Input: (7 -> 2 -> 4 -> 3) + (5 -> 6 -> 4)
+Output: 7 -> 8 -> 0 -> 7
+
+from the tail to head
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode p = l1, q =l2;
+        ArrayList<Integer> list1 = new ArrayList<Integer>();
+        ArrayList<Integer> list2 = new ArrayList<Integer>();
+
+        while(p != null || q != null){
+            if(p != null){
+                list1.add(p.val);
+                p = p.next; 
+            }     
+            if(q != null) {
+                list2.add(q.val);
+                q = q.next;
+            }
+        }
+        
+        int nump = list1.size(), numq = list2.size();
+        int sum, carry = 0;
+        sum = list1.get(nump-1) + list2.get(numq-1) + carry;
+        ListNode head = new ListNode(sum%10);
+        carry = sum/10;
+        nump--;
+        numq--
+        
+        while(nump > 0 || numq > 0){
+            if(nump == 0){
+                sum = list2.get(numq-1) + carry; 
+            }else if(numq == 0){
+                sum = list1.get(nump-1) + carry; 
+            } else{
+                sum = list1.get(nump-1) + list2.get(numq-1) + carry;
+            }             
+           
+            carry = sum/10;
+            
+            ListNode n  = head;
+            head = new ListNode(sum%10);
+            head.next = n;     
+            
+            if(nump != 0) nump --;
+            if(numq != 0)  numq --;               
+        }
+        
+        if(carry != 0){
+            ListNode n  = head;
+            head = new ListNode(carry);
+            head.next = n;
+        }
+        return head;
+    }
+}
