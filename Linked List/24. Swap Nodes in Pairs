@@ -7,7 +7,7 @@ Given 1->2->3->4, you should return the list as 2->1->4->3.
 
 [2,1,4,3,6,5,7]
 
-every 2+2 nodes
+every 2 nodes
 
 1 null
 o e 
@@ -24,7 +24,7 @@ O(n) time and O(1) space
 
 ***********
 attention: 
-every two nodes focus on four nodes
+every two nodes focus on 2+2 nodes
 the third one point would change 
 ***********
 
