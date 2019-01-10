@@ -1,0 +1,60 @@
+Given a linked list, swap every two adjacent nodes and return its head.
+
+Given 1->2->3->4, you should return the list as 2->1->4->3.
+
+
+[1,2,3,4,5,6,7]
+
+[2,1,4,3,6,5,7]
+
+every two nodes
+
+1 null
+o e 
+1 2 null
+o e o
+1 2 3 null
+o e o e
+
+1 2 3 4 null
+o e o e o
+2 1 4 3
+
+O(n) time and O(1) space
+
+***********
+attention: 
+every two nodes focus on four nodes
+the third one point would change 
+***********
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode swapPairs(ListNode head) {
+        if(head == null || head.next == null ) return head;
+        ListNode odd = head;
+        ListNode even = head.next;
+        head = head.next;
+        
+        while(even.next != null && even.next.next != null){    
+            ListNode  enext = even.next;
+            odd.next = even.next.next;
+            even.next = odd;
+            odd = enext;
+            even = odd.next;
+        }
+        
+        odd.next = even.next;
+        even.next = odd;
+        
+        return head;
+        
+    }
+}
