@@ -7,7 +7,7 @@ Given 1->2->3->4, you should return the list as 2->1->4->3.
 
 [2,1,4,3,6,5,7]
 
-every two nodes
+every 2+2 nodes
 
 1 null
 o e 
