@@ -1,1 +1,64 @@
 Given a (singly) linked list with head node root, write a function to split the linked list into k consecutive linked list "parts".
+
+The length of each part should be as equal as possible: 
+no two parts should have a size differing by more than 1. 
+This may lead to some parts being null.
+
+Input: 
+root = [1, 2, 3], k = 5
+Output: [[1],[2],[3],[],[]]
+
+
+Input: 
+root = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], k = 3
+Output: [[1, 2, 3, 4], [5, 6, 7], [8, 9, 10]]
+
+
+
+O(n) time
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode[] splitListToParts(ListNode root, int k) {
+        ListNode p = root;
+        int count = 0;
+        while( p != null){
+            count ++;
+            p = p.next;
+        }
+      
+        int num = count / k;
+        int addition= count % k;
+        ListNode [] split = new ListNode [k];
+        
+        p = root;
+        int numList;
+        for(int i = 0; i < k ; i++){
+            if(i < addition){
+                numList = num + 1;
+            }else{
+                numList = num;
+            } 
+            split[i] = p;
+            while(numList != 0){
+                numList --;
+                if(numList == 0){
+                    ListNode q = p;  
+                    p = p.next;
+                    q.next = null;
+                    break;
+                }
+                p = p.next;
+            }
+        }
+       
+       return split; 
+    }
+}
