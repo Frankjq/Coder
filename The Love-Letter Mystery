@@ -2,7 +2,7 @@ lover letter?
 palindrome check and modify once, count one
 the num of char a minus char b is the times to change a char in order to match requirement
 
-    
+   <String>
     
 static int theLoveLetterMystery(String s) {
     int length = s.length();
