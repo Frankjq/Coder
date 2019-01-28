@@ -1,0 +1,31 @@
+We have a list of points on the plane.  Find the K closest points to the origin (0, 0).
+
+
+O(NlgN) time
+
+class Solution {
+    public int[][] kClosest(int[][] points, int K) {
+        int [][] result = new int [K][2];
+        
+        int []dis = new int [points.length];
+        for(int i = 0; i < points.length; i++){
+            dis[i] = disPow(points[i]);         
+        }
+        Arrays.sort(dis);
+        
+        int distK = dis[K-1];
+        
+        for(int i =0, j=0; i< points.length; i++){
+            if(distK >= disPow(points[i])){
+                result[j] = points[i]; 
+                j++;
+            }
+        }
+        return result;
+    }
+    
+    public int disPow(int []point){
+        return point[0] * point[0]+  point[1]*point[1] ;
+    }
+    
+}
