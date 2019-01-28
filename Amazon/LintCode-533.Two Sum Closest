@@ -34,3 +34,37 @@ The minimum difference is 1. (4 - (2 + 1) = 1).
   
   return diff;
  }
+
+
+ public int twoSumCloset(int[] nums, int target) {
+  Arrays.sort(nums);
+  int low =0;
+  int high nums.length -1;
+  int diff = Integer.MAX_VALUE;
+  int lp =low; hp = high;
+  
+  while(low < high){
+   int sum = nums[low] + nums[high];
+   if (sum > target){
+   high -- ;
+   }else{
+
+    if (diff > target - num ){
+      diff = target - num;
+      lp= low;
+      hp= high;
+    }
+      low++ ;
+   }
+   
+  }
+  
+  return nums[lp]  , nums[hp];
+ 
+ 
+ }
+
+
+
+
+
