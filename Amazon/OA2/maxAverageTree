@@ -1,0 +1,88 @@
+//import java.util.ArrayList;
+//
+//public class componentNode {
+//        public int value;
+//        public ArrayList<componentNode> components;
+//
+//
+//        public componentNode(int val){
+//            this.value = val;
+//            components = new ArrayList<componentNode>();
+//        }
+//}
+
+
+
+
+
+
+public class treeNodes {
+
+
+    public static void main(String args[]){
+
+
+        componentNode node1 = new componentNode(200 );
+
+        componentNode node2 = new componentNode(120 );
+        componentNode node3 = new componentNode(180 );
+
+        componentNode node4 = new componentNode(110 );
+        componentNode node5 = new componentNode(20 );
+        componentNode node6 = new componentNode(30 );
+
+        componentNode node7 = new componentNode(150 );
+        componentNode node8 = new componentNode(80 );
+
+
+        node1.components.add(node2);
+        node1.components.add(node3);
+
+        node2.components.add(node4);
+        node2.components.add(node5);
+        node2.components.add(node6);
+
+        node3.components.add(node7);
+        node3.components.add(node8);
+
+
+        System.out.println(maxAverage(node1));
+
+    }
+
+
+    public static componentNode resNode;
+    public static int average = 0;
+    public static int  maxAverage(componentNode root){
+        if (root ==  null || root.components.size()==0) return 0;
+
+        helper(root);
+        return  resNode.value;
+    }
+
+    public static int []helper(componentNode node){
+        int [] res = new int [2];
+
+        if (node == null || node.components.size() == 0) {
+            res[0] = node.value;
+            res[1] = 1;
+            return res;
+        }
+
+        for(componentNode a : node.components){
+            res[0] = res[0] + helper(a)[0];
+            res[1] = res[1] + helper(a)[1];
+        }
+
+
+        res[0] = res[0] + node.value;
+        res[1] = res[1] +1;
+        int ave = res[0] / res[1];
+        if(average < ave ){
+            average = ave;
+            resNode = node;
+        }
+
+        return res;
+    }
+}
