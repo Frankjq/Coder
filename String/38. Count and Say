@@ -1,0 +1,86 @@
+The count-and-say sequence is the sequence of integers with the first five terms as following:
+
+1.     1
+2.     11
+3.     21
+4.     1211
+5.     111221
+
+
+
+construct a new String
+String        += 
+StringBuilder append
+
+the += need reconstruct new string and waste more time 
+the StringBuilder is fast, especilly in a loop
+
+solution: loop to compare each character and count
+
+
+
+class Solution {
+    public String countAndSay(int n) {
+        String res = "";
+        if (n == 1) {
+            return "1";
+        }
+        res = countAndSay(n-1);
+        res = count(res);                
+        return res;
+    }
+
+    public String count(String str){
+        
+        String res = "";
+        char [] chArray = str.toCharArray(); 
+       
+        char ch = chArray[0];
+        int count = 0;
+        
+        for(int i = 0; i < chArray.length ; i++){
+            if (ch == chArray[i]){
+                count ++;
+            }else{
+                 
+                res = res + count;
+                res = res + ch;
+                ch = chArray[i];
+                count = 1;
+            }        
+        }
+
+        res = res + count;
+        res = res + ch; 
+        return res;    
+    }
+}
+
+
+
+
+StringBuilder
+
+class Solution {
+    public String countAndSay(int n) {
+        if (n == 1) {
+            return "1";
+        }
+        char[] re = countAndSay(n - 1).toCharArray();
+        int count = 0;
+        char cur = re[0];
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < re.length; i++) {
+            if (cur != re[i]) {
+                sb.append(count);
+                sb.append(cur);
+                cur = re[i];
+                count = 1;
+            } else {
+                count++;
+            }
+        }
+        sb.append(count > 0 ? count + String.valueOf(cur) : "");
+        return sb.toString();
+    }
+}
