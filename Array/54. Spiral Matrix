@@ -1,0 +1,112 @@
+Given a matrix of m x n elements (m rows, n columns), return all elements of the matrix in spiral order.
+
+Input:
+[
+  [1, 2, 3, 4],
+  [5, 6, 7, 8],
+  [9,10,11,12]
+]
+Output: [1,2,3,4,8,12,11,10,9,5,6,7]
+
+单边考虑
+cp cn rp rn 单个变化
+
+
+class Solution {
+    public List<Integer> spiralOrder(int[][] matrix) {
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        
+        if(matrix.length == 0) return list;
+        
+        int row = matrix.length;
+        int col = matrix[0].length;
+        int cp = 0;
+        int rp = 0;
+        
+        while(cp < col && rp < row){
+            for(int c = cp; c < col; c++ ) list.add(matrix[rp][c]);
+        
+            rp++;
+            if(!(cp < col && rp < row)) break;
+            
+
+            for(int r = rp ; r < row; r++) list.add(matrix[r][col-1]);
+
+            col--;
+            if(!(cp < col && rp < row)) break;
+
+
+            for(int c = col-1; c >= cp; c-- ) list.add(matrix[row-1][c]);
+
+            row--;
+            if(!(cp < col && rp < row)) break;
+
+
+            for(int r = row-1; r >= rp; r-- ) list.add(matrix[r][cp]);
+
+            cp++;
+            
+        }
+
+        return list;
+        
+    }
+}
+
+
+Given a positive integer n, generate a square matrix filled with elements from 1 to n2 in spiral order.
+
+Input: 3
+Output:
+[
+ [ 1, 2, 3 ],
+ [ 8, 9, 4 ],
+ [ 7, 6, 5 ]
+]
+
+same
+
+
+class Solution {
+    public int[][] generateMatrix(int n) {
+        
+        int [][]matrix = new int [n][n];
+        
+        int start = 1;
+        
+        if(n == 1) {
+            matrix[0][0] = 1;
+            return matrix;
+        }
+        
+        int cp = 0 , cn = n;
+        int rp = 0 , rn = n;
+        
+        while(cp < cn && rp < rn){
+            for(int c = cp; c < cn ; c++) matrix[rp][c] = start ++;
+        
+            rp++;
+            
+            if(!(cp < cn && rp < rn))break;
+
+            for(int r = rp; r < rn ; r++) matrix[r][cn-1] = start ++;
+
+            cn--;
+            if(!(cp < cn && rp < rn))break;
+            
+
+            for(int c = cn-1; c >= cp ; c--) matrix[rn-1][c] = start ++;
+
+            rn--;
+            if(!(cp < cn && rp < rn))break;
+            
+
+            for(int r = rn-1; r >= rp ; r--) matrix[r][cp] = start ++;
+            cp++;
+        
+        }
+        
+        return matrix;
+       
+    }
+}
