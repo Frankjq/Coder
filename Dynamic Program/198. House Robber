@@ -44,8 +44,43 @@ class Solution {
             pre1 = res;
             
         }        
-     
         return res;  
+    }
+}
+
+
+You are a professional robber planning to rob houses along a street. 
+Each house has a certain amount of money stashed. All houses at this place are arranged in a circle. 
+That means the first house is the neighbor of the last one. 
+Meanwhile, adjacent houses have security system connected and it will automatically contact the police if two adjacent houses were broken into on the same night.
+
+
+circle --> 首尾只有一个在list中
+O(n) time 
+
+
+class Solution {
+    public int rob(int[] nums) {
+        if (nums.length == 0) return 0;
+        if (nums.length == 1) return nums[0];
+        if (nums.length == 2) return Math.max(nums[0],nums[1]);
+        return Math.max(robHelp(nums,0,nums.length-2) , robHelp(nums,1,nums.length-1) );   
+    }
+    
+    //1的helper function
+    public int robHelp(int []nums, int low , int high){
+        
+        int  first = nums[low];
+        int  second = Math.max(nums[low+1],first);
+        int res = second;
+        for (int i = low+2; i <= high; i++){
+            res = Math.max(nums[i] + first, second);
+            first = second;
+            second = res;
+        }
+        
+        return res;
         
     }
+    
 }
