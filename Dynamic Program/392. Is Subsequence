@@ -1,0 +1,49 @@
+Given a string s and a string t, check if s is subsequence of t.
+
+You may assume that there is only lower case English letters in both s and t. t is potentially a very long (length ~= 500,000) string, and s is a short string (<=100).
+
+A subsequence of a string is a new string which is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (ie, "ace" is a subsequence of "abcde" while "aec" is not).
+
+Example 1:
+s = "abc", t = "ahbgdc"
+
+Return true.
+
+Example 2:
+s = "axc", t = "ahbgdc"
+
+Return false.
+
+for each : s and t 
+compare each character
+
+    public boolean isSubsequence(String s, String t) {
+        if(s.length() > t.length()) return false;
+        
+        int l = 0;
+        for(int i = 0;i < t.length() && l < s.length(); i++){
+            if(s.charAt(l) == t.charAt(i)){
+                l++;
+            }
+        }
+        
+        if(l == s.length()) return true;
+        return false;
+        
+    }
+    
+
+using indexOf is easier to find index
+indexOf --> find specific char and return index or -1 when not find
+    public boolean isSubsequence(String s, String t) {
+        if(s.length() > t.length()) return false;
+        int index = 0;
+        for(int i = 0; i< s.length() ; i++){
+            index = t.indexOf(s.charAt(i), index);
+            if(index == -1) return false;
+            index ++;
+        }
+        
+        return true;
+    
+    }
