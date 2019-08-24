@@ -1,0 +1,45 @@
+In a country popular for train travel, you have planned some train travelling one year in advance.  
+The days of the year that you will travel is given as an array days.  Each day is an integer from 1 to 365.
+
+Train tickets are sold in 3 different ways:
+
+a 1-day pass is sold for costs[0] dollars;
+a 7-day pass is sold for costs[1] dollars;
+a 30-day pass is sold for costs[2] dollars.
+
+
+
+/*
+dp[i] min cost for previous i days max: 365  days
+
+x = dp[i-1] + costs[0]
+x = dp[i-7] + costs[1]
+x = dp[i-30] + costs[2]
+dp[i] = min(x) if ith day need traval
+dp[i] = dp[i-1] if no travel plan
+
+
+*/
+
+class Solution {
+    public int mincostTickets(int[] days, int[] costs) {
+        int [] dp = new int [366];
+        dp[0] = 0;
+        
+        for(int x = 0,  i = 1;  i < dp.length && x < days.length; i++, x++){
+            for(; i < days[x]; i++){
+                dp[i] = dp[i-1];
+            }
+            if(i <7){
+                dp[i] = Math.min(dp[i-1] + costs[0], Math.min(costs[1], costs[2]));
+            }else if(i >= 30){
+                dp[i] = Math.min(dp[i-1] + costs[0], Math.min(dp[i-7] + costs[1], dp[i-30] + costs[2]));
+            }else{
+                dp[i] = Math.min(dp[i-1] + costs[0], Math.min(dp[i-7] + costs[1], costs[2]));
+            }
+        }
+        
+        return dp[days[days.length-1]];
+  
+    }
+}
