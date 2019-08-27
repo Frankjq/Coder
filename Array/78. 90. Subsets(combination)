@@ -237,7 +237,90 @@ class Solution {
 }
 
 
+40. Combination Sum II
 
+Given a collection of candidate numbers (candidates) and a target number (target), find all unique combinations in candidates where the candidate numbers sums to target.
+
+Each number in candidates may only be used once in the combination.
+
+Note:
+
+All numbers (including target) will be positive integers.
+The solution set must not contain duplicate combinations.
+Example 1:
+
+Input: candidates = [10,1,2,7,6,1,5], target = 8,
+A solution set is:
+[
+  [1, 7],
+  [1, 2, 5],
+  [2, 6],
+  [1, 1, 6]
+]
+
+
+class Solution {
+    public List<List<Integer>> combinationSum2(int[] candidates, int target) {
+        List<List<Integer>> res = new ArrayList<>();
+        Arrays.sort(candidates);
+        
+        backTrack(res, new ArrayList<>(), 0, candidates, target);
+        return res;
+    }
+    
+    public void backTrack(List<List<Integer>> res, List<Integer> temp, int index, int [] candidates, int target){
+        if(target < 0) return;
+        else if( target == 0){
+            res.add( new ArrayList<>(temp) );
+            return;
+        }
+        
+        for(int i = index; i < candidates.length; i++){
+            if(i > index  && candidates[i] == candidates[i-1]) continue;
+            temp.add(candidates[i]);
+            backTrack(res, temp, i + 1, candidates, target - candidates[i]);
+            temp.remove(temp.size()-1);
+        }
+        
+    }
+} 
+
+
+
+216. Combination Sum III
+
+Find all possible combinations of k numbers that add up to a number n, given that only numbers from 1 to 9 can be used and each combination should be a unique set of numbers.
+
+Note:
+
+All numbers will be positive integers.
+The solution set must not contain duplicate combinations.
+Example 1:
+
+Input: k = 3, n = 7
+Output: [[1,2,4]]
+
+
+class Solution {
+    public List<List<Integer>> combinationSum3(int k, int n) {
+        List<List<Integer>> res = new ArrayList<>();
+        backTrack(res, new ArrayList<>(), 1, k , n);
+        return res;   
+    }
+    
+    public void backTrack(List<List<Integer>> res, List<Integer> temp, int index, int num, int target){
+        if(num == 0 && target == 0){
+            res.add(new ArrayList<>(temp));
+            return;
+        }else if(target < 0 || num < 0 ) return;
+        
+        for(int i = index ; i < 10 ; i ++){
+            temp.add(i);
+            backTrack(res, temp, i+1, num -1 , target - i );
+            temp.remove(temp.size()-1);
+        }
+    }
+}
 
 
 
