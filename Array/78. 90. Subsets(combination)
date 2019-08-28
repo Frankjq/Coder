@@ -323,5 +323,47 @@ class Solution {
 }
 
 
+377. Combination Sum IV
+
+dp is better
+
+// class Solution {
+//     int count = 0;
+
+//     public int combinationSum4(int[] nums, int target) {
+//         backTrack( nums, target);
+//         return count;
+//     }
+    
+//     public void backTrack(int [] nums, int target){
+//         if(target < 0) return;
+//         if(target == 0){
+//             count ++;
+//             return; 
+//         }
+        
+//         for(int i = 0; i < nums.length; i ++){
+//             backTrack(nums, target - nums[i]);
+//         }
+//     }
+// }
+
+class Solution {
+    public int combinationSum4(int[] nums, int target) {
+        int res [] = new int [target +1];
+        res[0] = 0;
+        for(int i = 1; i < res.length; i ++){
+            for(int x : nums){
+                if(i == x ){
+                    res[i] ++;
+                }else if(i > x){
+                    res[i] += res[i-x];
+                }
+            }
+        }
+        return res[target];
+    }
+}
+
 
 
