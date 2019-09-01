@@ -1,0 +1,60 @@
+The set [1,2,3,...,n] contains a total of n! unique permutations.
+
+By listing and labeling all of the permutations in order, we get the following sequence for n = 3:
+
+"123"
+"132"
+"213"
+"231"
+"312"
+"321"
+Given n and k, return the kth permutation sequence.
+
+Note:
+
+Given n will be between 1 and 9 inclusive.
+Given k will be between 1 and n! inclusive.
+
+
+
+looks like finding laws 
+O(n) time 
+
+
+class Solution {
+    public String getPermutation(int n, int k) {
+        boolean [] nums = new boolean [n];
+        StringBuilder res = new StringBuilder();
+        
+        int num = k-1;
+        int r = num;
+        int yu = num;
+        for(int t = 0; t < n-1; t++){
+            r = yu/ nn(n-t); 
+            yu = yu%nn(n-t);
+            
+            int x = 0;
+            for(int i = 0; i < n; i++){
+                if(!nums[i]){
+                    if(x == r){
+                        nums[i] =true;
+                        res.append(i+1);
+                        break; 
+                    }
+                    x ++;    
+                }
+            }
+        }
+        
+        for(int i = 0; i < n; i++){
+            if(!nums[i])   res.append(i+1);
+        }
+        return res.toString();
+    }
+    
+    public int nn(int n){
+        int res = 1;
+        for(int i = 1; i< n; i++) res *= i;
+        return res;
+    }
+}
