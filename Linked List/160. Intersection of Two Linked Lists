@@ -2,10 +2,9 @@ Write a program to find the node at which the intersection of two singly linked 
 
 For example, the following two linked lists:
  
+  
  
-https://assets.leetcode.com/uploads/2018/12/13/160_statement.png
- 
- two points=>
+two points=>
 
 12345 null 345
 345 null 12345
