@@ -1,0 +1,79 @@
+401. Binary Watch
+A binary watch has 4 LEDs on the top which represent the hours (0-11), and the 6 LEDs on the bottom represent the minutes (0-59).
+
+Each LED represents a zero or one, with the least significant bit on the right.
+
+
+
+class Solution {
+    public List<String> readBinaryWatch(int num) {
+        int[] hours = {1, 2, 4, 8};
+        int[] minutes = {1, 2, 4, 8, 16, 32};
+
+        List<String> result = new ArrayList<String>();
+        for(int hLights = 0; hLights <= num; hLights++){
+           if(hLights >= 4)
+              break;
+
+           List<Integer> theHours = getHours(hLights, hours);
+           List<Integer> theMinutes = getMinites(num - hLights, minutes);
+           for(int i = 0; i < theHours.size(); i++){
+               int hour = theHours.get(i);
+               if(hour > 11)
+                  continue;
+               String hStr = Integer.toString(hour);
+               for(int j = 0; j < theMinutes.size(); j++){
+                   int minute = theMinutes.get(j);
+                   if(minute > 59)
+                      continue;
+                
+                   String mString = Integer.toString(minute);
+                   if(minute < 10)
+                       mString = "0" + mString;
+                   
+                    result.add(hStr + ":" + mString);
+               }
+           }
+        }
+        return result;
+    }
+
+    private List<Integer> getHours(int num, int[] hours){
+       List<Integer> result = new ArrayList<Integer>();
+       helper(num, hours, 0, 0, result);
+       return result;
+    }
+
+    private List<Integer> getMinites(int num, int[] minites){
+        List<Integer> result = new ArrayList<Integer>();
+        helper(num, minites, 0, 0, result);
+        return result;
+    }
+
+    private void helper(int num, int[] numbers, int pos, int out, List<Integer> results){
+        if(num == 0){
+           results.add(out);
+           return;
+        }
+
+        for(int i = pos; i < numbers.length; i++){
+            helper(num - 1, numbers, i + 1, out + numbers[i], results);
+        }
+    }
+
+}
+
+
+
+math:
+
+class Solution {
+    public List<String> readBinaryWatch(int num) {
+    List<String> times = new ArrayList<>();
+    for (int h=0; h<12; h++)
+        for (int m=0; m<60; m++)
+            if (Integer.bitCount(h * 64 + m) == num)
+                times.add(String.format("%d:%02d", h, m));
+    return times;        
+    }
+}
