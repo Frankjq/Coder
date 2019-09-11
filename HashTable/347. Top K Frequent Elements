@@ -1,0 +1,42 @@
+Given a non-empty array of integers, return the k most frequent elements.
+
+Example 1:
+
+Input: nums = [1,1,1,2,2,3], k = 2
+Output: [1,2]
+Example 2:
+
+Input: nums = [1], k = 1
+Output: [1]
+
+class Solution {
+    public List<Integer> topKFrequent(int[] nums, int k) {
+        HashMap<Integer, Integer> num = new HashMap<>();
+        for(int x: nums){
+            num.put(x, num.getOrDefault(x,0) + 1);
+        }
+        
+        PriorityQueue<Integer> pq = new PriorityQueue<>(nums.length, new Comparator<Integer>(){
+            public int compare(Integer a, Integer b){
+                return num.get(a) - num.get(b);
+            }            
+        });
+        
+        for(int x : num.keySet()){
+            pq.add(x);
+            if(pq.size() > k){
+                pq.poll();
+            }
+        }
+        
+        List<Integer> res = new ArrayList<>();
+        while(!pq.isEmpty()){
+            res.add(pq.poll());
+        }
+        Collections.reverse(res);
+        return res;
+    }
+}
+
+
+Bucket may be good, but need be specific
