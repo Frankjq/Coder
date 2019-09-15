@@ -37,3 +37,28 @@ Sort
 
 		 }
 	}
+
+
+
+
+left = 0; right = num.length;
+public void quicksort(int[] num, int left, int right){
+        if(left > right) return;
+        int mid = left;
+        for(int i = left+1; i <= right; i ++){
+            if(num[i] < num[mid]){
+                swap(num,i,mid);
+                swap(num,mid+1,i);
+                mid++;
+            }
+        }
+        quicksort(num,left,mid-1);
+        quicksort(num,mid+1,right);
+    }
+    
+    
+    public void swap(int[] num, int a, int b){
+        int temp = num[a];
+        num[a] = num[b];
+        num[b] =temp;
+    }
