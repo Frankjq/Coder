@@ -1,0 +1,89 @@
+75. Sort Colors
+Given an array with n objects colored red, white or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white and blue.
+
+Here, we will use the integers 0, 1, and 2 to represent the color red, white, and blue respectively.
+
+Note: You are not suppose to use the library's sort function for this problem.
+
+Example:
+
+Input: [2,0,2,1,1,0]
+Output: [0,0,1,1,2,2]
+
+
+
+O(n) time 
+O(n+m) space
+counting sort:
+
+void sortColors(int A[], int n) {
+    int num0 = 0, num1 = 0, num2 = 0;
+    for(int i = 0; i < n; i++) {
+        if (A[i] == 0) ++num0;
+        else if (A[i] == 1) ++num1;
+        else if (A[i] == 2) ++num2;
+    }
+    for(int i = 0; i < num0; ++i) A[i] = 0;
+    for(int i = 0; i < num1; ++i) A[num0+i] = 1;
+    for(int i = 0; i < num2; ++i) A[num0+num1+i] = 2;
+}
+
+
+quicksort
+O(nlgn) time 
+in place
+class Solution {
+    public void sortColors(int[] nums) {
+        quicksort(nums, 0 , nums.length-1);
+    }
+    
+    public void quicksort(int[] num, int left, int right){
+        if(left > right) return;
+        int mid = left;
+        for(int i = left+1; i <= right; i ++){
+            if(num[i] < num[mid]){
+                swap(num,i,mid);
+                swap(num,mid+1,i);
+                mid++;
+            }
+        }
+        quicksort(num,left,mid-1);
+        quicksort(num,mid+1,right);
+    }
+    public void swap(int[] num, int a, int b){
+        int temp = num[a];
+        num[a] = num[b];
+        num[b] =temp;
+    }
+    
+}
+
+
+
+two points
+O(n) time
+class Solution {
+    public void sortColors(int[] nums) {
+        if(nums==null||nums.length<2)
+            return;
+    //使用两个指针，low和high，low对应着数字为0，high对应着数字为2；
+        int low=0,high=nums.length-1;
+        for(int i=0;i<=high;){
+            if(nums[i]==0){
+                swap(nums,i,low);
+                low++;i++;
+            }else if(nums[i]==2){
+                swap(nums,i,high);
+                high--;
+            }else{
+                i++;
+            }
+        }
+    }
+    
+     public void swap(int[] num, int a, int b){
+        int temp = num[a];
+        num[a] = num[b];
+        num[b] =temp;
+    }
+}
