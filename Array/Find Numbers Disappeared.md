@@ -148,7 +148,7 @@ class Solution {
 ```
 
 *************
-##Conclusion
+## Conclusion
 
 if not consider space, hashmap or hashset and array.
 if limited, could use math sum or bit xor
