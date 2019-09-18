@@ -22,8 +22,8 @@
 
 ### clockwise 90 degrees 
 
-// swap two times 
-// clockwise = > up to down -> symmetry
+1. swap two times 
+2. clockwise = > up to down -> symmetry
 ```java
 class Solution {
     public void rotate(int[][] matrix) {
@@ -47,8 +47,8 @@ class Solution {
 ***
 ### anticlockwise
 
-// swap two times 
-// anticlockwise = > left to right -> symmetry
+1. swap two times 
+2. anticlockwise = > left to right -> symmetry
 
 ---
 ## 189. Rotate Array
@@ -65,8 +65,8 @@ class Solution {
 
 
 
-//create a new array is easy but more space O(n) space O(n) time
-// O (nk) time but O(1) space
+1. create a new array is easy but more space O(n) space O(n) time
+2. O(nk) time but O(1) space
 
 reverse three times:
 * reversing all numbers     
