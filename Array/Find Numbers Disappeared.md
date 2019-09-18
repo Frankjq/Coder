@@ -129,7 +129,7 @@ class Solution {
 }
 ```
 
-#### mark as positve
+#### mark and count negative
 
 ```java
 class Solution {
@@ -146,3 +146,9 @@ class Solution {
     }
 }
 ```
+
+*************
+##Conclusion
+
+if not consider space, hashmap or hashset and array.
+if limited, could use math sum or bit xor
