@@ -22,3 +22,15 @@ public int minCost(int[][] costs) {
     return Math.min(Math.min(costs[m][0], costs[m][1]), costs[m][2]);
 }
 ```
+
+## 265. Paint House II
+extend to k colors 
+
+decrease the time complexity, choose two min colors from all color cost 
+
+```
+for from 0 to last one house
+    from  first to last color
+        choose the min cost from previous color
+ 
+```
