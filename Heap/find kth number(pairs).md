@@ -9,6 +9,9 @@ Example 1:
 > Explanation: The first 3 pairs are returned from the sequence: 
 >             [1,2],[1,4],[1,6],[7,2],[7,4],[11,2],[7,6],[11,4],[11,6]
 
+
+#### heap
+
 ```java
 class Solution {
     class pair{
@@ -55,6 +58,53 @@ class Solution {
  
         }
         return res;
+    }
+}
+```
+
+
+## 378. Kth Smallest Element in a Sorted Matrix
+
+
+#### heap
+
+```java
+class Solution {
+    
+    class Number{
+        private int value;
+        private int row;
+        private int col;
+        
+        public Number(int row, int col, int value){
+            this.value = value;
+            this.row = row;
+            this.col = col;
+        }
+        
+    }
+    
+    
+    public int kthSmallest(int[][] matrix, int k) {
+        PriorityQueue<Number> pq = new PriorityQueue<>(k, new Comparator<Number>(){
+            public int compare (Number a , Number b){
+                return a.value - b.value;
+            }
+        }); 
+        
+        for(int i  = 0 ; i < matrix.length && i < k; i ++) pq.offer(new Number(0, i, matrix[0][i]));
+        
+        for(int i = 0; i < k-1 ; i++){
+            Number num = pq.poll();
+            
+            if(num.row == matrix.length -1) continue;
+            
+            pq.offer(new Number(num.row +1,num.col, matrix[num.row+1][num.col]));
+            
+        }
+        
+        return pq.poll().value;
+            
     }
 }
 ```
