@@ -1,5 +1,6 @@
 
   O(lgn) time
+// inital: low = 0; high = length-1; 
 
 	 static boolean binarySeach (int [] array, int low, int high , int target){
 		 
