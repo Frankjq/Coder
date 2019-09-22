@@ -1,0 +1,114 @@
+MST find the minimun cost connections of cities 
+
+sort all cities by cost
+
+unionFind all cities, check if exist in the sets
+
+set number represent the different group
+
+
+
+import java.util.*;
+
+public class MST {
+    public static void main (String []args ){
+        CityCost c1 = new CityCost("A", "D", 1);
+        CityCost c2 = new CityCost("A", "B", 3);
+        CityCost c3 = new CityCost("D", "B", 3);
+        CityCost c4 = new CityCost("B", "C", 1);
+        CityCost c5 = new CityCost("C", "D", 1);
+        CityCost c6 = new CityCost("E", "D", 6);
+        CityCost c7 = new CityCost("C", "E", 5);
+        CityCost c8 = new CityCost("C", "F", 4);
+        CityCost c9 = new CityCost("E", "F", 2);
+        List<CityCost> list = new ArrayList<>(Arrays.asList(c1, c2, c3, c4, c5, c6, c7, c8, c9));
+        List<CityCost> result = MinCost(list);
+
+
+
+        for(CityCost c : result){
+            System.out.println(c.city1 + " "+ c.city2 +" "+c.cost);
+        }
+
+    }
+
+    public static HashMap<String,Integer> map = new HashMap<String,Integer>();
+    public static int SetNum = 0;
+    public static List<CityCost> MinCost (List<CityCost> citys){
+        List<CityCost> res = new ArrayList<CityCost>();
+
+
+
+        Collections.sort(citys, new Comparator<CityCost>() {
+            @Override
+            public int compare(CityCost o1, CityCost o2) {
+                return o1.cost - o2.cost;
+            }
+        });
+
+
+        for(CityCost c : citys){
+            if(Union(c)){
+                res.add(c);
+            }
+
+        }
+
+        return res;
+    }
+
+    public static boolean Union(CityCost citys){
+
+        if(map.containsKey(citys.city1) && map.containsKey(citys.city2)){
+            if(map.get(citys.city1) != map.get(citys.city2)){
+                int num = map.get(citys.city2);
+
+                for(Map.Entry<String, Integer> c : map.entrySet()){
+                    if(c.getValue() == num){
+                        c.setValue(map.get(citys.city1));
+                    }
+                }
+            return true;
+            }else{
+                return false;
+            }
+        }
+
+        if(!map.containsKey(citys.city1) && !map.containsKey(citys.city2)){
+            map.put(citys.city1, SetNum);
+            map.put(citys.city2, SetNum);
+            SetNum++;
+            return true;
+
+        }
+
+        if(!map.containsKey(citys.city1) && map.containsKey(citys.city2)){
+            map.put(citys.city1, map.get(citys.city2));
+            return true;
+        }
+
+        if(map.containsKey(citys.city1) && !map.containsKey(citys.city2)){
+            map.put(citys.city2, map.get(citys.city1));
+            return true;
+        }
+
+    return true;
+
+    }
+
+
+}
+
+
+
+class CityCost{
+    String city1;
+    String city2;
+    int cost;
+
+    CityCost(String str1 , String str2, int cost){
+        this.city1 = str1;
+        this.city2 = str2;
+        this.cost  = cost;
+    }
+}

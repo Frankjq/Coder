@@ -1,0 +1,179 @@
+Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
+
+O(n^3) time 
+
+limit --> length = 0
+
+class Solution {
+    public String longestPalindrome(String s) {
+        if (s.length() == 0) return "";
+        String str = s.substring(0,1);    
+        for(int i=s.length()-1; i>=0; i--){
+            
+            for(int j=0; j<i; j++){
+                if(isPalindrome(s.substring(j,i+1))){
+                    if(str.length() < s.substring(j,i+1).length()){
+                        str = s.substring(j,i+1);
+                        break;
+                    }
+                }
+                
+            }
+             
+        }
+        
+        return str;
+    }
+    
+    
+    public boolean isPalindrome(String s){
+        int length = s.length();
+        for(int i=0; i<length/2; i++){
+            if(s.charAt(i) != s.charAt(length-1-i)){
+                return false;
+            } 
+        }
+        return true;
+    }
+}
+
+
+the first is bad
+
+
+based on the substring length from the longest to 1
+class Solution {
+    public String longestPalindrome(String s) {
+        int len = s.length();
+        if (len == 0) return "";
+        
+        String str = s.substring(0,1);  
+        for(int i= len; i > 1 ;i--){
+            for(int j=0; j+i <= len ; j++){
+                 if(isPalindrome(s.substring(j,j+i))){
+                     return s.substring(j,j+i);
+                 } 
+            }
+        }
+        return str;
+    }
+    
+    public boolean isPalindrome(String s){
+        int length = s.length();
+        for(int i=0; i<length/2; i++){
+            if(s.charAt(i) != s.charAt(length-1-i)){
+                return false;
+            } 
+        }
+        return true;
+    }
+}
+
+the second is better
+
+
+dynamic programming
+
+O(n^2)
+
+class Solution {
+  public String longestPalindrome(String s) {
+        char[] c = s.toCharArray();
+        // pal[i][j] represenst whether substring starting at index i, of length j, is a palindrome.
+        boolean[][] pal = new boolean[c.length][c.length+1];
+        // length 0 and length 1 are always palindromes
+        for( int i=0; i<c.length; i++ )
+            pal[i][0]=pal[i][1]=true;
+
+        // find all palindromes
+        for( int j=2; j<=c.length; j++ )
+            for( int i=0; i<=c.length-j; i++ )
+                if( pal[i+1][j-2] && c[i]==c[i+j-1] )
+                    pal[i][j]=true;
+
+        // return longest
+        for( int j=c.length; j>0; j-- )
+            for( int i=0; i<c.length; i++ )
+                if( pal[i][j] )
+                    return s.substring( i, i+j );
+        
+        return "";
+    }
+}
+
+
+p[i][j] represent the string i~j is a palindrome
+base: p[i][j]
+      p[i][i+1]
+      
+recurision: p[i][j] true if p[i+1][j-1] and Si == Sj
+
+
+
+class Solution {
+    public String longestPalindrome(String s) {
+        if(s.length()<2) return s;
+        
+        boolean [][] pal = new boolean [s.length()][s.length()];
+
+        for(int i=0; i< s.length(); i++){
+            pal[i][i] = true;
+        }
+        
+        for(int i=0; i< s.length()-1; i++){
+            if (s.charAt(i)==s.charAt(i+1)){
+                pal[i][i+1] = true;
+            }
+        }
+        for(int i=s.length()-2; i>=0; i--){ 
+            for(int j=i+1; j<s.length(); j++){
+                if ((s.charAt(i)==s.charAt(j)) && pal[i+1][j-1]){
+                    pal[i][j] = true;
+                }
+            }
+        }
+        String str = "";
+        for(int i =0; i<s.length(); i++){
+            for(int j=i; j< s.length(); j++){
+                
+                if(pal[i][j]){
+                    if((j-i+1) > str.length()){
+                         str = s.substring(i,j+1);
+                    }
+                       
+                }
+                
+            }
+        }
+        
+        return str;
+    }
+}
+
+
+class Solution {
+    int longest = 0;
+    int begin = 0;
+    public String longestPalindrome(String s) {
+        if(s.length()< 2) return s;
+        for(int i = 0; i< s.length(); i++){
+            helper(s,i,i);
+            helper(s,i,i+1);
+        }
+        return s.substring(begin, begin + longest);
+    }
+    public void helper(String s, int l, int r){
+        while(l>=0 && r < s.length()){
+            if(s.charAt(l) != s.charAt(r))break;
+            int len = r - l + 1;
+            if(len > longest){
+                begin = l;
+                longest = len;
+            }
+            l--;
+            r++;
+        }
+    }
+}
+
+
