@@ -34,3 +34,22 @@ for from 0 to last one house
         choose the min cost from previous color
  
 ```
+
+
+
+## 276. Paint Fence
+
+> There is a fence with n posts, each post can be painted with one of the k colors.You have to paint all the posts such that no more than two adjacent fence posts have the same color.
+
+> Return the total number of ways you can paint the fence.
+//最多有两个相同颜色
+
+#### DP
+
+if n = 0, 0
+if n = 1, k
+if n = 2, k * k-1 + k
+if n = 3, k * k-1 + (k * k-1 + k) * k-1
+
+dp[i] = dp[i-1] * k + dp[i-2] * (k-1)
+
