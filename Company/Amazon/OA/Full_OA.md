@@ -46,7 +46,7 @@ search:
 
 
 
-
+### OA1
 
 1. ReserveArray：     += 改成 -=
 2. CountOcurrence:  while循环的最后加上 i++
