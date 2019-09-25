@@ -15,7 +15,7 @@ Example 1:
   O(n) sapce
 ### two points
   
-  ```java
+```java
   /**
  * Definition for singly-linked list.
  * class ListNode {
@@ -43,7 +43,7 @@ public class Solution {
         return true;
     }
 }
-  ```
+```
 
 
 ## 142. Linked List Cycle II
