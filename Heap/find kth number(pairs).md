@@ -312,3 +312,34 @@ class Solution {
 #### binary search
 O(logn + k) time
 
+
+## 215. Kth Largest Element in an Array
+
+> Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.
+
+
+#### max heap
+```java
+class Solution {
+    public int findKthLargest(int[] nums, int k) {
+        PriorityQueue<Integer> pq = new PriorityQueue<>(nums.length, new Comparator<Integer>(){
+            public int compare (Integer a, Integer b){
+                return b - a;
+            }
+        });
+        for(int num : nums){
+            pq.offer(num);
+        }
+        
+        int res = pq.peek();
+        while( k>0 && !pq.isEmpty()){
+            res = pq.poll();
+            k--;
+        }        
+        return res;
+    }
+}
+```
+#### sort 
+3 lines
+

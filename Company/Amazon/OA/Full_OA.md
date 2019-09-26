@@ -35,11 +35,9 @@ Spiral Matrix ⭐ [New Grad]
 
 search:
 
-
-21. Merge Two Sorted Lists
-138. Copy List with Random Pointer
-
-
+1. 21. [Merge Two Sorted Lists](https://github.com/Ssuperfrank/Codes/blob/master/Company/Amazon/OA/Merge%20Two%20Sorted%20Lists.md#leetcode-21-merge-two-sorted-lists)
+2. 138. [Copy List with Random Pointer](https://github.com/Ssuperfrank/Codes/blob/master/Company/Amazon/OA/copy%20list%20with%20random.md#138-copy-list-with-random-pointer)
+3. 1192. [Critical Connections](https://github.com/Ssuperfrank/Codes/blob/master/Company/Amazon/OA/Critical%20connection.md#1192-critical-connections-in-a-network)
 
 
 
