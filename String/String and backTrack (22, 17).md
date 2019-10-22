@@ -1,21 +1,18 @@
-22. Generate Parentheses
-Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
+## 22. Generate Parentheses
 
-For example, given n = 3, a solution set is:
+> Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
+For example
+> given n = 3, a solution set is:
+>[
+>   "((()))",
+>   "(()())",
+>   "(())()",
+>   "()(())",
+>   "()()()"
+> ]
 
-[
-  "((()))",
-  "(()())",
-  "(())()",
-  "()(())",
-  "()()()"
-]
-
-/*
-backTrack
-*/
-
-
+#### backTrack
+```java
 class Solution {
     public List<String> generateParenthesis(int n) {
         List<String> res = new ArrayList<>();
@@ -29,7 +26,6 @@ class Solution {
             return;
         }
         if(left < num){
-   
             backTrack(res, str + "(", left +1, right, num);
         }
         if(right < left){
@@ -38,14 +34,15 @@ class Solution {
         
     }
 }
+```
 
 
+## 17. Letter Combinations of a Phone Number
 
-17. Letter Combinations of a Phone Number
-Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent.
+> Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent.
+> A mapping of digit to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.
 
-A mapping of digit to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.
-
+```java
 class Solution {
     public List<String> letterCombinations(String digits) {
 
@@ -80,9 +77,11 @@ class Solution {
     }
     
 }
+```
 
 same but replace hashmap with switch
 
+```java
 class Solution {
     public List<String> letterCombinations(String digits) {
         List<String> result = new ArrayList<>();
@@ -128,3 +127,4 @@ class Solution {
         return "";
     }
 }
+```
