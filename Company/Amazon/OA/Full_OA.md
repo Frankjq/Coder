@@ -49,16 +49,7 @@ Spiral Matrix ⭐ [New Grad]
 
 search:
 
-1. 21. [Merge Two Sorted Lists](https://github.com/Ssuperfrank/Codes/blob/master/Company/Amazon/OA/Merge%20Two%20Sorted%20Lists.md#leetcode-21-merge-two-sorted-lists)
-2. 138. [Copy List with Random Pointer](https://github.com/Ssuperfrank/Codes/blob/master/Company/Amazon/OA/copy%20list%20with%20random.md#138-copy-list-with-random-pointer)
-3. 1192. [Critical Connections](https://github.com/Ssuperfrank/Codes/blob/master/Company/Amazon/OA/Critical%20connection.md#1192-critical-connections-in-a-network)
-4. 	Spiral Matrix
-
-
-
-
-
-### OA1
+## OA1
 
 1. ReserveArray：     += 改成 -=
 2. CountOcurrence:  while循环的最后加上 i++
@@ -67,11 +58,17 @@ search:
 5. PrintPattern：       for循环里加大括号，把print++也包含进去
 6. MachesterArray： A[i] == A‍‌‍‍‌‌‍‌‌‌‍‌‍‍‍‍‌‍‌[i-1] 改成 A[i] != A[i-1]
 7. SortArray insert selection: arr[min] > arr[x] 改成 arr[min] > arr[y]
+8. Count occurrence
+9. Sort array
+10. Reverse array
+11. Even odd pattern
+12. Print pattern
+13. Count digits
+14. Replace values
 
-1. Count occurrence
-2. Sort array
-3. Reverse array
-4. Even odd pattern
-5. Print pattern
-6. Count digits
-7. Replace values
+## OA2
+
+1. *21. [Merge Two Sorted Lists](https://github.com/Ssuperfrank/Codes/blob/master/Company/Amazon/OA/Merge%20Two%20Sorted%20Lists.md#leetcode-21-merge-two-sorted-lists)*
+2. *138. [Copy List with Random Pointer](https://github.com/Ssuperfrank/Codes/blob/master/Company/Amazon/OA/copy%20list%20with%20random.md#138-copy-list-with-random-pointer)*
+3. *1192. [Critical Connections](https://github.com/Ssuperfrank/Codes/blob/master/Company/Amazon/OA/Critical%20connection.md#1192-critical-connections-in-a-network)*
+4. 	Spiral Matrix
