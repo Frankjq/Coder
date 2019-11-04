@@ -58,11 +58,13 @@ Longest string made up of only vowels
 6. [1](https://leetcode.com/problems/two-sum/),[167](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/). [Two Sum - Unique Pairs](https://github.com/Ssuperfrank/Codes/blob/master/Array/Sums.md#amazon-oa-two-sum)
 
 
+7.  Favorite Genres ⭐⭐ [New Grad]
+8.  Critical Routers ⭐⭐ [New Grad]
+9. Product Suggestions ⭐⭐ [New Grad | Experienced]
+10. Subtree of Another Tree ⭐⭐ [New Grad]
 
 
 
-Critical Connections ⭐⭐ [New Grad]
-Favorite Genres ⭐⭐ [New Grad]
-Critical Routers ⭐⭐ [New Grad]
-Product Suggestions ⭐⭐ [New Grad | Experienced]
-Subtree of Another Tree ⭐⭐ [New Grad]
+
+
+
