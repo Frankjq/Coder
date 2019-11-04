@@ -1,7 +1,6 @@
 top N Competitors/Buzzwords ⭐⭐ [Experienced]
 Zombie in Matrix ⭐⭐ [Experienced]
-Critical Routers ⭐⭐ [New Grad]
-Product Suggestions ⭐⭐ [New Grad | Experienced]
+
 Number of Clusters ⭐⭐ [Experienced]
 Reorder Data in Log Files ⭐⭐⭐ [Experienced]
 Optimal Utilization ⭐⭐⭐ [Experienced]
@@ -9,14 +8,7 @@ Min Cost to Connect Ropes / Min Time to Merge Files ⭐⭐⭐[Experienced]
 Treasure Island / Min Distance to Remove the Obstacle (BFS) ⭐⭐⭐ [Experienced]
 Treasure Island II
 Find Pair With Given Sum ⭐⭐ [Experienced, Intern]
-Copy List with Random Pointer ⭐⭐ [New Grad]
-Merge Two Sorted Lists ⭐⭐ [New Grad]
-Subtree of Another Tree ⭐⭐ [New Grad]
-Search a 2D Matrix II ⭐⭐ [New Grad]
-Critical Connections ⭐ [New Grad]
-Favorite Genres ⭐⭐ [New Grad]
-Two Sum - Unique Pairs ⭐⭐ [New Grad]
-Spiral Matrix ⭐ [New Grad]
+
 Count substrings with exactly K distinct chars ⭐ [Intern]
 Path With Maximum Score ⭐⭐ [Intern]
 Longest Palindromic Substring ⭐⭐ [Intern]
@@ -38,16 +30,6 @@ Longest string without 3 consecutive characters
 Longest string made up of only vowels
 
 
-Copy List with Random Pointer ⭐⭐ [New Grad]
-Merge Two Sorted Lists ⭐⭐ [New Grad]
-Subtree of Another Tree ⭐⭐ [New Grad]
-Search a 2D Matrix II ⭐⭐ [New Grad]
-Critical Connections ⭐⭐ [New Grad]
-Favorite Genres ⭐⭐ [New Grad]
-Two Sum - Unique Pairs ⭐⭐ [New Grad]
-Spiral Matrix ⭐ [New Grad]
-
-search:
 
 ## OA1
 
@@ -68,7 +50,19 @@ search:
 
 ## OA2
 
-1. *21. [Merge Two Sorted Lists](https://github.com/Ssuperfrank/Codes/blob/master/Company/Amazon/OA/Merge%20Two%20Sorted%20Lists.md#leetcode-21-merge-two-sorted-lists)*
-2. *138. [Copy List with Random Pointer](https://github.com/Ssuperfrank/Codes/blob/master/Company/Amazon/OA/copy%20list%20with%20random.md#138-copy-list-with-random-pointer)*
-3. *1192. [Critical Connections](https://github.com/Ssuperfrank/Codes/blob/master/Company/Amazon/OA/Critical%20connection.md#1192-critical-connections-in-a-network)*
-4. 	Spiral Matrix
+1. [21](https://leetcode.com/problems/merge-two-sorted-lists/)[Merge Two Sorted Lists](https://github.com/Ssuperfrank/Codes/blob/master/Company/Amazon/OA/Merge%20Two%20Sorted%20Lists.md#leetcode-21-merge-two-sorted-lists)
+2. [138](https://leetcode.com/problems/copy-list-with-random-pointer/)[Copy List with Random Pointer](https://github.com/Ssuperfrank/Codes/blob/master/Company/Amazon/OA/copy%20list%20with%20random.md#138-copy-list-with-random-pointer)
+3. [1192](https://leetcode.com/problems/critical-connections-in-a-network/)[Critical Connections](https://github.com/Ssuperfrank/Codes/blob/master/Company/Amazon/OA/Critical%20connection.md#1192-critical-connections-in-a-network) -- Hard
+4. [54](https://leetcode.com/problems/spiral-matrix/),[59](https://leetcode.com/problems/spiral-matrix-ii/)[Spiral Matrix]()
+5. [74](https://leetcode.com/problems/search-a-2d-matrix/),[240](https://leetcode.com/problems/search-a-2d-matrix-ii/)[Search a 2D Matrix]()
+6. [Two Sum - Unique Pairs](https://leetcode.com/discuss/interview-question/372434)
+
+
+
+
+
+Critical Connections ⭐⭐ [New Grad]
+Favorite Genres ⭐⭐ [New Grad]
+Critical Routers ⭐⭐ [New Grad]
+Product Suggestions ⭐⭐ [New Grad | Experienced]
+Subtree of Another Tree ⭐⭐ [New Grad]
