@@ -51,6 +51,97 @@ class Solution {
 need to sort
 
 
+## 167. Two Sum II - Input array is sorted
+> Given an array of integers that is already sorted in ascending order, find two numbers such that they add up to a specific target number.
+
+> The function twoSum should return indices of the two numbers such that they add up to the target, where index1 must be less than index2.
+
+#### two points
+due to it is sorted
+```java
+class Solution {
+    public int[] twoSum(int[] numbers, int target) {
+        int lo = 0; int hi = numbers.length-1;
+        
+        while(lo < hi){
+            if(numbers[lo] + numbers[hi] == target){
+                return new int[]{lo+1, hi+1};
+            }
+            if(numbers[lo] + numbers[hi] < target){
+                lo++;
+            }else{
+                hi--;
+            }
+        }
+        return new int[]{0,0};
+    }
+}
+```
+
+
+## Amazon-OA Two Sum
+> Given an int array nums and an int target, find how many unique pairs in the array such that their sum is equal to target. Return the number of pairs.
+
+>Input: nums = [1, 1, 2, 45, 46, 46], target = 47
+>Output: 2
+>Explanation:
+>1 + 46 = 47
+>2 + 45 = 47
+
+#### sort and two points
+```java
+// Java O(nlogn)
+public static int getUniquePairs(int[] nums, int target){
+    Arrays.sort(nums);
+    int i = 0;
+    int j = nums.length-1;
+    int ans = 0;
+    while (i < j){
+        int sum = nums[i]+ nums[j];
+        if (sum < target){
+            i++;
+        } else if (sum > target){
+            j--;
+        } else {
+            ans++;
+            i++;
+            j--;
+            while (i < j && nums[i] == nums[i-1]){
+                i++;
+            }
+            while (i < j && nums[j] == nums[j+1]){
+                j--;
+            }
+        }
+    }
+    return ans;
+}
+````
+
+
+#### one pass and use extra space
+```java
+// java O(n)
+public static int uniquePairs(int[] nums, int target){
+    Set<Integer> set = new HashSet<Integer>();
+    Set<Integer> seen = new HashSet<Integer>();
+    int count = 0;
+    for(int num : nums){
+        if(set.contains(target-num) && !seen.contains(num)){
+            count++;
+            seen.add(target-num);
+            seen.add(num);
+        }
+        else if(!set.contains(num)){
+            set.add(num);
+        }
+    }
+
+    return count;
+}
+```
+
+
 ***
 ## 15. 3Sum
 

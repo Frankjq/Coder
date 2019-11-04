@@ -54,7 +54,7 @@ Longest string made up of only vowels
 2. [138](https://leetcode.com/problems/copy-list-with-random-pointer/). [Copy List with Random Pointer](https://github.com/Ssuperfrank/Codes/blob/master/Company/Amazon/OA/copy%20list%20with%20random.md#138-copy-list-with-random-pointer)
 3. [1192](https://leetcode.com/problems/critical-connections-in-a-network/). [Critical Connections](https://github.com/Ssuperfrank/Codes/blob/master/Company/Amazon/OA/Critical%20connection.md#1192-critical-connections-in-a-network) -- Hard
 4. [54](https://leetcode.com/problems/spiral-matrix/),[59](https://leetcode.com/problems/spiral-matrix-ii/). [Spiral Matrix](https://github.com/Ssuperfrank/Codes/blob/master/Company/Amazon/OA/Spiral%20Matrix.md#54-spiral-matrix)
-5. [74](https://leetcode.com/problems/search-a-2d-matrix/),[240]https://leetcode.com/problems/search-a-2d-matrix-ii/). ([Search a 2D Matrix](https://github.com/Ssuperfrank/Codes/blob/master/Company/Amazon/OA/search%20matrix.md#74-search-a-2d-matrix)
+5. [74](https://leetcode.com/problems/search-a-2d-matrix/),[240](https://leetcode.com/problems/search-a-2d-matrix-ii/). [Search a 2D Matrix](https://github.com/Ssuperfrank/Codes/blob/master/Company/Amazon/OA/search%20matrix.md#74-search-a-2d-matrix)
 6. [Two Sum - Unique Pairs](https://leetcode.com/discuss/interview-question/372434)
 
 
