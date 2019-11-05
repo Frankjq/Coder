@@ -50,20 +50,16 @@ Longest string made up of only vowels
 
 ## OA2
 
-1. [21](https://leetcode.com/problems/merge-two-sorted-lists/). [Merge Two Sorted Lists](https://github.com/Ssuperfrank/Codes/blob/master/Company/Amazon/OA/Merge%20Two%20Sorted%20Lists.md#leetcode-21-merge-two-sorted-lists)
-2. [138](https://leetcode.com/problems/copy-list-with-random-pointer/). [Copy List with Random Pointer](https://github.com/Ssuperfrank/Codes/blob/master/Company/Amazon/OA/copy%20list%20with%20random.md#138-copy-list-with-random-pointer)
-3. [1192](https://leetcode.com/problems/critical-connections-in-a-network/). [Critical Connections](https://github.com/Ssuperfrank/Codes/blob/master/Company/Amazon/OA/Critical%20connection.md#1192-critical-connections-in-a-network) -- Hard
-4. [54](https://leetcode.com/problems/spiral-matrix/),[59](https://leetcode.com/problems/spiral-matrix-ii/). [Spiral Matrix](https://github.com/Ssuperfrank/Codes/blob/master/Company/Amazon/OA/Spiral%20Matrix.md#54-spiral-matrix)
-5. [74](https://leetcode.com/problems/search-a-2d-matrix/),[240](https://leetcode.com/problems/search-a-2d-matrix-ii/). [Search a 2D Matrix](https://github.com/Ssuperfrank/Codes/blob/master/Company/Amazon/OA/search%20matrix.md#74-search-a-2d-matrix)
-6. [1](https://leetcode.com/problems/two-sum/),[167](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/). [Two Sum - Unique Pairs](https://github.com/Ssuperfrank/Codes/blob/master/Array/Sums.md#amazon-oa-two-sum)
-
-
-7.  Favorite Genres ⭐⭐ [New Grad]
-8.  Critical Routers ⭐⭐ [New Grad]
-9. Product Suggestions ⭐⭐ [New Grad | Experienced]
-10. Subtree of Another Tree ⭐⭐ [New Grad]
-
-
+1. [1](https://leetcode.com/problems/two-sum/),[167](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/). [Two Sum - Unique Pairs](https://github.com/Ssuperfrank/Codes/blob/master/Array/Sums.md#amazon-oa-two-sum)
+2. [21](https://leetcode.com/problems/merge-two-sorted-lists/). [Merge Two Sorted Lists](https://github.com/Ssuperfrank/Codes/blob/master/Company/Amazon/OA/Merge%20Two%20Sorted%20Lists.md#leetcode-21-merge-two-sorted-lists)
+3. [54](https://leetcode.com/problems/spiral-matrix/),[59](https://leetcode.com/problems/spiral-matrix-ii/). [Spiral Matrix](https://github.com/Ssuperfrank/Codes/blob/master/Company/Amazon/OA/Spiral%20Matrix.md#54-spiral-matrix)
+4. [74](https://leetcode.com/problems/search-a-2d-matrix/),[240](https://leetcode.com/problems/search-a-2d-matrix-ii/). [Search a 2D Matrix](https://github.com/Ssuperfrank/Codes/blob/master/Company/Amazon/OA/search%20matrix.md#74-search-a-2d-matrix)
+5. [138](https://leetcode.com/problems/copy-list-with-random-pointer/). [Copy List with Random Pointer](https://github.com/Ssuperfrank/Codes/blob/master/Company/Amazon/OA/copy%20list%20with%20random.md#138-copy-list-with-random-pointer)
+6. [572](https://leetcode.com/problems/subtree-of-another-tree/). [Subtree of Another Tree]()
+7. [Favorite Genres]()
+8. [Product Suggestions]()
+9. [1192](https://leetcode.com/problems/critical-connections-in-a-network/). [Critical Connections](https://github.com/Ssuperfrank/Codes/blob/master/Company/Amazon/OA/Critical%20connection.md#1192-critical-connections-in-a-network) -- Hard
+10. [1192](https://leetcode.com/problems/critical-connections-in-a-network/). [Critical Routers](https://github.com/Ssuperfrank/Codes/blob/master/Company/Amazon/OA/Critical%20connection.md#1192-critical-connections-in-a-network)
 
 
 

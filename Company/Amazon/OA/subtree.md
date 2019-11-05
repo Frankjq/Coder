@@ -17,13 +17,11 @@ class Solution {
         if(s == null) return false;
         return equal(s,t)||isSubtree(s.left, t) || isSubtree(s.right, t);
     }
-    
     public boolean equal(TreeNode s, TreeNode t){
         if(s == null && t ==null) return true;
         if(s == null || t ==null) return false;
         
         return s.val == t.val && equal(s.left, t.left) && equal(s.right, t.right);
     }
-    
 }
 ```

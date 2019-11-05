@@ -32,7 +32,7 @@ class Solution {
 > Integers in each column are sorted in ascending from top to bottom.
 
 #### binary search
- \mathcal{O}(n+m)O(n+m)
+O(n+m)
 ```java
 class Solution {
     public boolean searchMatrix(int[][] matrix, int target) {
