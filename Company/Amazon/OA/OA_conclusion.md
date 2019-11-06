@@ -1,33 +1,31 @@
-top N Competitors/Buzzwords ⭐⭐ [Experienced]
-Zombie in Matrix ⭐⭐ [Experienced]
-
-Number of Clusters ⭐⭐ [Experienced]
-Reorder Data in Log Files ⭐⭐⭐ [Experienced]
-Optimal Utilization ⭐⭐⭐ [Experienced]
-Min Cost to Connect Ropes / Min Time to Merge Files ⭐⭐⭐[Experienced]
-Treasure Island / Min Distance to Remove the Obstacle (BFS) ⭐⭐⭐ [Experienced]
-Treasure Island II
-Find Pair With Given Sum ⭐⭐ [Experienced, Intern]
-
-Count substrings with exactly K distinct chars ⭐ [Intern]
-Path With Maximum Score ⭐⭐ [Intern]
-Longest Palindromic Substring ⭐⭐ [Intern]
-Substrings of size K with K distinct chars ⭐⭐ [Intern]
-Most Common Word ⭐⭐ [Intern]
-Distance Between Nodes in BST
-K Closest Points to Origin
-Min Cost to Connect All Nodes (a.k.a. Min Cost to Add New Roads)
-Min Cost to Repair Edges (MST)
-Prison Cells After N Days
-Partition Labels
-Subtree with Maximum Average
-AMCAT Interface
-Codility
-Point of Lattice ⭐ [Experienced]
-Merge Intervals ⭐
-Roll Dice ⭐
-Longest string without 3 consecutive characters
-Longest string made up of only vowels
+top N Competitors/Buzzwords ⭐⭐ [Experienced]  
+Zombie in Matrix ⭐⭐ [Experienced]  
+Number of Clusters ⭐⭐ [Experienced]  
+Reorder Data in Log Files ⭐⭐⭐ [Experienced]  
+Optimal Utilization ⭐⭐⭐ [Experienced]  
+Min Cost to Connect Ropes / Min Time to Merge Files ⭐⭐⭐[Experienced]  
+Treasure Island / Min Distance to Remove the Obstacle (BFS) ⭐⭐⭐ [Experienced]  
+Treasure Island II  
+Find Pair With Given Sum ⭐⭐ [Experienced, Intern]  
+Count substrings with exactly K distinct chars ⭐ [Intern]  
+Path With Maximum Score ⭐⭐ [Intern]  
+Longest Palindromic Substring ⭐⭐ [Intern]  
+Substrings of size K with K distinct chars ⭐⭐ [Intern]  
+Most Common Word ⭐⭐ [Intern]  
+Distance Between Nodes in BST  
+K Closest Points to Origin  
+Min Cost to Connect All Nodes (a.k.a. Min Cost to Add New Roads)  
+Min Cost to Repair Edges (MST)  
+Prison Cells After N Days  
+Partition Labels  
+Subtree with Maximum Average  
+AMCAT Interface  
+Codility  
+Point of Lattice ⭐ [Experienced]  
+Merge Intervals ⭐  
+Roll Dice ⭐  
+Longest string without 3 consecutive characters  
+Longest string made up of only vowels  
 
 
 
@@ -137,8 +135,6 @@ Leaders are obligated to respectfully challenge decisions when they disagree, ev
 Leaders focus on the key inputs for their business and deliver them with the right quality and in a timely fashion. Despite setbacks, they rise to the occasion and never settle.
 领导者会关注其业务的关键决定条件，确保工作质量并及时完成。尽管遭受挫折，领导者依然勇于面对挑战，从不气馁。
 
-
-
 https://zhuanlan.zhihu.com/p/65655631
 
 ### OA3
@@ -173,8 +169,7 @@ https://wdxtub.com/interview/14520850399861.html
 
 打分不是关键，排序才是关键。    
 大部分情况下其实并没有deadline 和 requirement谁更好，更多还是在这个组合中你对ddl 和 requirement整体的权衡。    
-
-每个选项可以评1~5分，most effective 是5，然后1是least effective刚开始让你看一些介绍amazon工作环境的视频:        
+每个选项可以评1~5分，most effective 是5，然后1是least effective刚开始让你看一些介绍amazon工作环境的视频:      
 1. 上来给一段video，场景是项目的晨会，就是把team正在推进的项目描述一下，期间会有多个项目和你有关系，后面会遇到
 2. 进入工作界面，可以看到接受到邮件，接收到的instant message
 3. 进入工作状态。会有同事给你发邮件，发信息。需要你对他们提出的问题做一些判断，也就是给解决问题的选项评分
