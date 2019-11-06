@@ -39,7 +39,7 @@ class Solution {
         return res;
     }
     int time = 0;
-    public void dfs(int u, boolean [] visited, int [] disc, int [] low,  List<Integer> [] graph, List<List<Integer>> res, int pre){
+    public void dfs(int u, boolean [] visited, int [] nodeId, int [] low,  List<Integer> [] graph, List<List<Integer>> res, int pre){
         visited[u] = true;
         nodeId[u] = low[u] = ++time;
         for(int i : graph[u]){
