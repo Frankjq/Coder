@@ -1,24 +1,22 @@
 ## 451. Sort Characters By Frequency
 
->> Given a string, sort it in decreasing order based on the frequency of characters.
+>> Given a string, sort it in decreasing order based on the frequency of characters.  
 
->>  Example 1:
->>  Input:
->>  "tree"
->>  Output:
->>  "eert"
-
->>  Explanation:
->>  'e' appears twice while 'r' and 't' both appear once.
->>  So 'e' must appear before both 'r' and 't'. Therefore "eetr" is also a valid answer.
-
+>>  Example 1:  
+>>  Input:  
+>>  "tree"  
+>>  Output:  
+>>  "eert"  
+>>  Explanation:  
+>>  'e' appears twice while 'r' and 't' both appear once.  
+>>  So 'e' must appear before both 'r' and 't'. Therefore "eetr" is also a valid answer.  
+ 
 
 #### hashMap + PriorityQueue
 
-*** hashMap used to record each character and its frequency    
+**hashMap used to record each character and its frequency    
 priorityQueue used to sort the entry by its frequency    
-StringBuilder used to build the final result
-***
+StringBuilder used to build the final result**
 
 ```java
 class Solution {
