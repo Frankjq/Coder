@@ -1,14 +1,14 @@
 ## 387. First Unique Character in a String
->> Given a string, find the first non-repeating character in it and return it's index. If it doesn't exist, return -1.   
+> Given a string, find the first non-repeating character in it and return it's index. If it doesn't exist, return -1.   
 
->> Examples:     
->>  s = "leetcode"   
->>  return 0.   
->>  s = "loveleetcode",   
->> return 2.   
+> Examples:     
+>  s = "leetcode"   
+>  return 0.   
+>  s = "loveleetcode",   
+> return 2.   
 
 
-#### linear search
+### linear search
 
 **based on the size of character set, we decide the size of array.    
 if it is ASCII, the size is 256.   
@@ -31,7 +31,7 @@ class Solution {
 }
 ```
 
-#### two pointers search
+### two pointers search
 
 **two pointers - slow and fast, if slow pointer is not unique, move to next. otherwise, the fast pointer move and slow keep check.**
 
