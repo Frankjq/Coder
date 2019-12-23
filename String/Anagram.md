@@ -50,7 +50,7 @@ class Solution {
 
 ## 266. Palindrome Permutation
 
-> Given a string, determine if a permutation of the string could form a palindrome.  
+> Given a string, determine if a permutation of the string could form a palindrome.   
 
 ### hash table and check if it is palindrome
 
@@ -77,10 +77,9 @@ class Solution {
 
 ## 49. Group Anagrams
 
-> Given an array of strings, group anagrams together.
-
-> Example:
-> Input: ["eat", "tea", "tan", "ate", "nat", "bat"],
+> Given an array of strings, group anagrams together.  
+> Example:  
+> Input: ["eat", "tea", "tan", "ate", "nat", "bat"],  
 > Output:  
  [  
    ["ate","eat","tea"],   
@@ -133,16 +132,16 @@ class Solution {
 
 ## 760. Find Anagram Mappings
 
-> Given two lists Aand B, and B is an anagram of A. B is an anagram of A means B is made by randomizing the order of the elements in A.
-> We want to find an index mapping P, from A to B. A mapping P[i] = j means the ith element in A appears in B at index j.
-> These lists A and B may contain duplicates. **If there are multiple answers, output any of them.**
+> Given two lists Aand B, and B is an anagram of A. B is an anagram of A means B is made by randomizing the order of the elements in A.  
+> We want to find an index mapping P, from A to B. A mapping P[i] = j means the ith element in A appears in B at index j.  
+> These lists A and B may contain duplicates. **If there are multiple answers, output any of them.**    
 
 For example, given
-> A = [12, 28, 46, 32, 50]
-> B = [50, 12, 32, 46, 28]
+> A = [12, 28, 46, 32, 50]    
+> B = [50, 12, 32, 46, 28]      
 
 We should return
-> [1, 4, 3, 2, 0]
+> [1, 4, 3, 2, 0]      
 > as P[0] = 1 because the 0th element of A appears at B[1], and P[1] = 4 because the 1st element of A appears at B[4], and so on.
 
 
@@ -170,10 +169,9 @@ class Solution {
 
 ## 438. Find All Anagrams in a String
 
-> Given a string s and a non-empty string p, find all the start indices of p's anagrams in s.
-> Strings consists of lowercase English letters only and the length of both strings s and p will not be larger than 20,100.
-> The order of output does not matter.
-
+> Given a string s and a non-empty string p, find all the start indices of p's anagrams in s.    
+> Strings consists of lowercase English letters only and the length of both strings s and p will not be larger than 20,100.    
+> The order of output does not matter.    
 
 
 ### sliding window
