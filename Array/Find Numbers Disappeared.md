@@ -164,12 +164,12 @@ Note:
 4. There is only one duplicate number in the array, but it could be repeated more than once.
 
 
-need one new method, because the array length is n+1 and contain n unqiue number         
+need one new method, because the array length is n+1 and contain n unqiue number        
 make it as [linklist in circle](https://github.com/Ssuperfrank/Codes/blob/master/Linked%20List/141.%20Linked%20List%20Cycle.md#linked-list-cycle)
 
 #### slow, fast points and confirm entry node
-O(n) time      
-O(1) space      
+O(n) time    
+O(1) space       
 
 ```java
 class Solution {
