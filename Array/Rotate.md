@@ -148,3 +148,63 @@ class Solution {
 }
 ```
 
+## [61. Rotate List](https://leetcode.com/problems/rotate-list/)
+
+> Given a linked list, rotate the list to the right by k places, where k is non-negative.
+
+Example:
+
+> Input: 1->2->3->4->5->NULL, k = 2    
+> Output: 4->5->1->2->3->NULL    
+Explanation:     
+> rotate 1 steps to the right: 5->1->2->3->4->NULL   
+> rotate 2 steps to the right: 4->5->1->2->3->NULL    
+
+
+### find node to split list
+
+1. count the total number of nodes
+2. find the new tail and new head
+3. reconstruct
+
+**Time Complexity is O(N)**
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode rotateRight(ListNode head, int k) {
+        if(head == null || head.next == null) return head;
+        
+        int length = 1;
+        ListNode point = head;
+        while(point.next != null){
+            length ++;
+            point = point.next;
+        }
+        point.next = head;
+        
+        int index = length - k % length;
+        point = head;
+        for(int i = 0; i < index-1; i++){
+            point = point.next;
+        }
+        
+        ListNode res = point.next;
+        point.next = null;
+        return res;
+    }
+}
+```
+
+
+
+
+
+
